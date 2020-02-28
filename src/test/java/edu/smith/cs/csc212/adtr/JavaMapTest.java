@@ -19,6 +19,53 @@ public class JavaMapTest {
 	public void testEmpty() {
 		MapADT<String, String> empty = new JavaMap<>();
 		assertEquals(empty.size(), 0);
-		//Assert.assert
 	}
+	
+	//Adriana
+	@Test
+	public void testOnePut() {
+		MapADT<String, String> one = new JavaMap<>();
+		one.put("A","letter");
+		assertEquals(one.size(), 1);
+	}
+	//Adriana
+	@Test
+	public void testPutReplace() {
+		MapADT<String, String> one = new JavaMap<>();
+		one.put("A","letter");
+		assertEquals(one.get("A"), "letter");
+		one.put("A", "number");
+		assertEquals(one.get("A"), "number");
+	}
+	
+	//Kaia
+	@Test
+	public void testGetValue() {
+		MapADT<String, String> one = new JavaMap<>();
+		one.put("A","letter");
+		assertEquals(one.get("A"), "letter");
+		assertEquals(one.get("B"), null);
+	}
+	
+	//Kaia
+	@Test
+	public void testSizeMultiple() {
+		MapADT<String, String> one = new JavaMap<>();
+		one.put("A","letter");
+		one.put("B","letter");
+		one.put("A","letter");
+		assertEquals(one.size(), 2);
+	}
+	
+	//Kaia
+	@Test
+	public void testRemoveOne() {
+		MapADT<String, String> one = new JavaMap<>();
+		one.put("A","letter");
+		assertEquals(one.size(), 1);
+		one.remove("A");
+		assertEquals(one.size(), 0);
+	}
+	
+	
 }
